@@ -1,0 +1,1 @@
+rails g model BlogPost title:string body:text
