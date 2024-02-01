@@ -70,5 +70,6 @@ end
 
 gem 'devise'
 gem 'foreman'
+gem 'will_paginate'
 
 gem "tailwindcss-rails", "~> 2.3"

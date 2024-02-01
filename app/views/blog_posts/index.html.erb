@@ -1,9 +1,22 @@
-<h1>Blog Posts </h1>
-<% @blog_posts.each do |blog_post| %>
-  <div>
-    <h3>
-      <%= link_to blog_post.title, blog_post.slug.present? ? blog_post_path(blog_post.slug) : blog_post %>
-    </h3>
-    <p><%= blog_post.body %></p>
-  </div>
-<% end %>
+<div class="grid grid-cols-1 gap-1">
+  <% @blog_posts.each do |blog_post| %>
+    <div class="border-t-2 border-gray-300 py-8 flex">
+      <div class="flex items-center justify-start w-1/3">
+        <p class="text-[#261b21] text-start text-xl font-semibold">
+          <%= blog_post.created_at.strftime('%B %d, %Y') %>
+        </p>
+      </div>
+      <div class="w-full">
+        <h3 class="text-[#d30001] text-3xl font-bold underline hover:text-[#261b21] transition">
+          <%= link_to blog_post.title, blog_post.slug.present? ? blog_post_path(blog_post.slug) : blog_post %>
+        </h3>
+        <p class="text-[#5A5153] text-base leading-6 mt-4">
+          <%= truncate(blog_post.body, length: 150) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="border-t-2 border-gray-300 py-8 flex items-center justify-center">
+  <%= will_paginate @blog_posts %>
+</div>

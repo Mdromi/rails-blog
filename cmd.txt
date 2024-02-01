@@ -23,3 +23,5 @@ User.last.destroy
 rails db:seed
 bundle add tailwindcss-rails
 rails generate devise:views
+
+./bin/dev

@@ -13,3 +13,116 @@
  *= require_tree .
  *= require_self
  */
+body {
+  height: 100vh;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  background-image: url("logo.svg");
+  background: #d30001;
+  border-radius: 50%;
+  height: 112px; /* Adjust the height as needed */
+  width: 112px; /* Adjust the width as needed */
+  position: relative;
+  transition: background 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  z-index: 2;
+}
+
+.logo:hover {
+  background: #261b21; /* Change the background color on hover */
+}
+
+.logo:after {
+  content: "";
+  background-image: url("logo.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: brightness(0) invert(1);
+  height: 50px; /* Adjust the height as needed */
+  width: 90px; /* Adjust the width as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+}
+
+.nav-link {
+  background: none;
+  border-radius: 6px;
+  color: #261b23;
+  display: inline-block;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  line-height: 32px;
+  padding: 5px 20px;
+  transition: background 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+    color 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.nav-link:hover {
+  background: #f0e7e9;
+  color: #d30001;
+}
+
+.footer {
+  overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.footer {
+  overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.footer:before {
+  content: "";
+  background-image: url("shape-top-up-left.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 10vw;
+  left: 0;
+  max-height: 160px;
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  filter: brightness(0) invert(1) grayscale(100%) sepia(0) hue-rotate(0deg)
+    saturate(0) contrast(1);
+}
+
+.footer-logo {
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  width: 90px;
+}
+
+.footer-logo a:after {
+  background: url("logo.svg") center center no-repeat;
+  content: "";
+  filter: invert(15%) sepia(95%) saturate(3482%) hue-rotate(354deg)
+    brightness(82%) contrast(124%);
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 90px;
+}
+
+.footer-logo a:hover:after {
+  filter: invert(5%) sepia(18%) saturate(1397%) hue-rotate(314deg)
+    brightness(95%) contrast(83%);
+}

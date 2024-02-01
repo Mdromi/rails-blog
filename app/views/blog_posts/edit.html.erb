@@ -1,3 +1,5 @@
-<h1>Edit Blog Post </h1>
-<%= render "form", locals: {blog_post: @blog_post}%>
-<%= button_to "Delete", @blog_post, method: :delete, data: { turbo_confirm: 'Are you sure?' } %>
+<div class="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+  <h1 class="text-2xl font-semibold mb-6">Edit Blog Post</h1>
+  <%= render "form", locals: { blog_post: @blog_post } %>
+  <%= button_to "Delete", @blog_post, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'w-full bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red active:bg-red-800 mt-4' %>
+</div>

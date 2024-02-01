@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
     before_action :find_blog_post, except: [:index, :new, :create]
     # before_action :find_blog_post, only: [:show, :edit, :update, :destroy]
     def index
-        @blog_posts = BlogPost.all
+      @blog_posts = BlogPost.paginate(page: params[:page], per_page: 2)
     end
 
     def show
