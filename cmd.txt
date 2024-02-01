@@ -1,1 +1,25 @@
+//2
 rails g model BlogPost title:string body:text
+rails db:migrate
+rails console
+
+//3
+BlogPost.create(title: "Hello World", body: "This is my very first blog post")
+BlogPost.all
+BlogPost.find(1)
+BlogPost.update(title: "Updated Title")
+BlogPost.destroy
+BlogPost.model_name
+
+
+//4
+rails generate migration AddSlugToBlogPosts slug:string
+rails db:migrate
+
+//5
+bundle add device
+rails g devise User
+User.last.destroy
+rails db:seed
+bundle add tailwindcss-rails
+rails generate devise:views

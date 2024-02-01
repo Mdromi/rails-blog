@@ -1,0 +1,29 @@
+<% if flash[:error] %>
+  <div>
+    <h2>Error:</h2>
+    <p><%= flash[:error] %></p>
+  </div>
+<% end %>
+<%= form_with model: @blog_post do |form| %>
+  <% if @blog_post.errors.any? %>
+    <div>
+      <h2>Validation Errors:</h2>
+      <ul>
+        <% @blog_post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.submit  %>
+  </div>
+<% end %>
