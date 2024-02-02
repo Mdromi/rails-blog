@@ -23,5 +23,8 @@ User.last.destroy
 rails db:seed
 bundle add tailwindcss-rails
 rails generate devise:views
-
 ./bin/dev
+
+//6 Deploying
+Editor="code --wait" bin/rails credentials:edit
+cat config/master.key

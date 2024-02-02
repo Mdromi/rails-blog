@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-user = User.where(email: "rome44653@gmail.com").first_or_initialize
+user = User.where(email: "rootuser@mail.com").first_or_initialize
 
 # Set the password attributes
 user.password = "password"
