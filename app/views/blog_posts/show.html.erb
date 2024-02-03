@@ -1,4 +1,4 @@
-<div class=" mx-auto mt-8 p-6 bg-white rounded-md text-center shadow-md">
+<div class="mx-auto mt-8 p-6 bg-white rounded-md text-center shadow-md">
   <p class="text-[#261B23] text-base font-semibold tracking-tighter leading-6 mb-3">
     <%= @blog_post.created_at.strftime('%B %d, %Y') %>
   </p>
@@ -7,12 +7,10 @@
   </h3>
   <% if user_signed_in? %>
     <div class="flex items-center justify-center p-4 mt-2 pb-1">
-      <button class="mr-4 text-[#968D8F] text-lg font-semibold leading-6 bg-[#F2F2F2] rounded-full px-4 py-2 hover:text-[#5A5153] transition-colors duration-300">
-        Slug: <%= @blog_post.slug %>
-      </button>
-      <button class="mr-4 text-[#968D8F] text-lg font-semibold leading-6 bg-[#F2F2F2] rounded-full px-4 py-2 hover:text-[#5A5153] transition-colors duration-300">
-        ID: <%= @blog_post.id %>
-      </button>
+      <% button_options = "mr-4 text-[#968D8F] text-lg font-semibold leading-6 bg-[#F2F2F2] rounded-full px-4 py-2 hover:text-[#5A5153] transition-colors duration-300" %>
+      <%= link_to "Slug: " + @blog_post.slug, blog_post_path(@blog_post.slug), class: button_options %>
+      <%= link_to "ID: " + @blog_post.id.to_s, blog_post_path(@blog_post), class: button_options %>
+      <%= render 'shared/status_buttons', button_options: button_options, blog_post: @blog_post %>
       <%= link_to "Edit Blog Post", edit_blog_post_path(@blog_post), class: "text-white bg-blue-500 hover:bg-blue-700 rounded-full px-4 py-2" %>
     </div>
   <% end %>

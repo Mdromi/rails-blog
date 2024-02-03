@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbo-visit-control" content="reload">
     <title>Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= turbo_include_tags %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -41,7 +43,7 @@
       </div>
     </div>
     <!-- Footer Section -->
-    <footer class="bg-[#F0E7E9] py-4 text-center footer">
+    <footer class="bg-[#F0E7E9] w-full py-4 text-center footer">
       <!-- Your Footer Content Goes Here -->
       <div class="footer-logo">
         <a href="/" aria-label="Ruby on Rails" class=""></a>

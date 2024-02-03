@@ -7,9 +7,15 @@
         </p>
       </div>
       <div class="w-full">
+        <% button_options = "mt-2 text-[#968D8F] text-sm font-semibold leading-6 " %>
         <h3 class="text-[#d30001] text-3xl font-bold underline hover:text-[#261b21] transition">
           <%= link_to blog_post.title, blog_post.slug.present? ? blog_post_path(blog_post.slug) : blog_post %>
         </h3>
+        <% if user_signed_in? %>
+          <div class="flex items-center justify-start">
+            <%= render 'shared/status_buttons', button_options: button_options, blog_post: blog_post %>
+          </div>
+        <% end %>
         <p class="text-[#5A5153] text-base leading-6 mt-4">
           <%= truncate(blog_post.body, length: 150) %>
         </p>

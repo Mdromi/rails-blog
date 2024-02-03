@@ -30,3 +30,6 @@ Editor="code --wait" bin/rails credentials:edit
 cat config/master.key
 bundle exec rails db:migrate; bundle exec rails:seed; // add render start cmd 
 rails db:system:change --to=postgresql
+bundle exec rails db:seed
+
+rails generate migration AddPublishedAtToBlogPosts published_at:datetime

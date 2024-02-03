@@ -13,6 +13,9 @@ user = User.where(email: "rootuser@mail.com").first_or_initialize
 # Set the password attributes
 user.password = "password"
 user.password_confirmation = "password"
-
-# Save the user
-user.save!
+# Save the user and check for errors
+if user.save
+  puts "User created successfully!"
+else
+  puts "Failed to create user. Errors: #{user.errors.full_messages}"
+end
