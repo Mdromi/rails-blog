@@ -3,7 +3,7 @@
     <div class="border-t-2 border-gray-300 py-8 flex">
       <div class="flex items-center justify-start w-1/3">
         <p class="text-[#261b21] text-start text-xl font-semibold">
-          <%= blog_post.created_at.strftime('%B %d, %Y') %>
+          <%= render partial: 'shared/published_info', locals: { blog_post: blog_post } %>
         </p>
       </div>
       <div class="w-full">

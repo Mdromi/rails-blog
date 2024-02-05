@@ -1,10 +1,10 @@
 <%= link_to edit_blog_post_path(blog_post) do %>
   <% if blog_post.present? %>
-    <% if blog_post.draft %>
+    <% if blog_post.draft? %>
       <%= button_to "Draft", "", class: button_options %>
-    <% elsif blog_post.scheduled %>
+    <% elsif blog_post.scheduled? %>
       <%= button_to "Scheduled", "", class: button_options %>
-    <% elsif blog_post.published %>
+    <% elsif blog_post.published? %>
       <%= button_to "Published", "", class: button_options %>
     <% end %>
   <% end %>

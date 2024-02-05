@@ -1,0 +1,7 @@
+<% if blog_post.published? %>
+  <%= blog_post.published_at.strftime('%B %d, %Y') %>
+<% elsif blog_post.scheduled? %>
+  <%= blog_post.published_at.strftime('%B %d, %Y') %>
+<% else %>
+  <%= blog_post.created_at.strftime('%B %d, %Y') %>
+<% end %>
