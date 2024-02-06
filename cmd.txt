@@ -33,3 +33,4 @@ rails db:system:change --to=postgresql
 bundle exec rails db:seed
 
 rails generate migration AddPublishedAtToBlogPosts published_at:datetime
+rails g migration MoveBodyToActionText

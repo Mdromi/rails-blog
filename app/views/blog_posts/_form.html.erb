@@ -21,8 +21,8 @@
       <%= form.text_field :title, class: 'w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500' %>
     </div>
     <div>
-      <%= form.label :body, class: 'block text-sm font-medium text-gray-700' %>
-      <%= form.text_area :body, class: 'w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500' %>
+      <%= form.label :content, class: 'block text-sm font-medium text-gray-700' %>
+      <%= form.rich_text_area  :content, class: 'w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500' %>
     </div>
     <div>
       <%= form.label :published_at, class: 'block text-sm font-medium text-gray-700' %>

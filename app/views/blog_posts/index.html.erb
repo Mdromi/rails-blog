@@ -17,7 +17,7 @@
           </div>
         <% end %>
         <p class="text-[#5A5153] text-base leading-6 mt-4">
-          <%= truncate(blog_post.body, length: 150) %>
+          <% truncate_rich_text(blog_post.content) %>
         </p>
       </div>
     </div>
